@@ -1,11 +1,16 @@
 import React from 'react';
-import './App.scss';
-import { alex, misha, olya, Person } from './components/Person/Person';
 
-export const App = () => (
-  <div className="App">
-    <Person person={misha} />
-    <Person person={olya} />
-    <Person person={alex} />
-  </div>
-);
+export const Person = ({ person }) => {
+  const { name, age } = person;
+
+  return (
+    <div className="Person">
+      <h2>{name}</h2>
+      {age !== undefined && age !== null && <p>Age: {age}</p>}
+    </div>
+  );
+};
+
+export const misha = { name: 'Misha', age: 25 };
+export const olya = { name: 'Olya', age: 0 }; // Added age property
+export const alex = { name: 'Alex', age: 30 };
